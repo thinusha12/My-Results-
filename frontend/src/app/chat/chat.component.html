@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="img_container">
+    <img class="img" src="../../assets/msg.svg" alt="chat_img">
+  </div>
+  <div class="chat_container">
+    <div class="chat">
+      <div>
+        <button class="btn_side" (click)="startChat()" *ngIf="isChatStartBtn">
+          Start Chat
+        </button>
+      </div>
+      <div class="messages">
+        <div *ngFor="let message of messages"
+          [class]="message.type ? 'out_msg' : message.type === false ? 'in_msg' : '' ">
+          {{ message.msg !== "" ? message.msg : null}}
+        </div>
+      </div>
+    </div>
+    <div class="input_container">
+      <input [(ngModel)]="message" placeholder="Enter message" class="chat_input">
+      <button (click)="sendMessage()" *ngIf="isEnableSendBtn" class="chat_btn">Send</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="dashboard">
+  <div class="logo">
+    <div>
+      <div class="logo_title">Find Your Exam Results</div>
+      <div class="logo_sub_title">Check your Results Easily</div>
+    </div>
+    <img class="logo_image" src="../../assets/logo_dash.svg" alt="">
+  </div>
+  <div class="form">
+    <div class="form_card">
+      <form action="">
+        <div class="form_title">Check Student Result</div>
+        <div class="input_field">
+          <label for="studentId" class="input_label">
+            Student ID
+          </label>
+          <input class="input_box" type="text" name="studentId" id="studentId" placeholder="Enter Student ID.."
+            [(ngModel)]="studentId" />
+        </div>
+        <div class="input_field">
+          <label for="name" class="input_label">
+            Name
+          </label>
+          <input class="input_box" type="text" name="name" id="name" placeholder="Enter Student Name.."
+            [(ngModel)]="name" />
+        </div>
+        <div class="button_wrapper">
+          <button class="button" (click)="getMarkByNameAndId()">
+            Check Result
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <app-result-popup *ngIf="isOpen" [data]="studentData" (closePopup)="onClosePopup($event)"></app-result-popup>
+</div>
+<div class="msgIcon">
+  <img src="../../assets/messageIcon.png" alt="messageIcon" (click)="navigateChat()">
+</div>

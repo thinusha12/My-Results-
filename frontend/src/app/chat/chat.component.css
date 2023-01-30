@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.img_container {
+  width: 50%;
+}
+
+.img {
+  width: 100%;
+}
+
+.chat_container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chat {
+  background-color: #025d4c;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 300px;
+  border-radius: 20px;
+  overflow-y: auto;
+  background-image: url('../../assets/chat_bg.jpg');
+
+}
+
+.btn_side {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #025d4c;
+  color: #fff;
+}
+
+.btn_side:hover {
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.input_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.messages {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.in_msg {
+  align-self: flex-start;
+  background-color: rgb(54, 54, 54);
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  width: 70%;
+  word-wrap: break-word;
+}
+
+.out_msg {
+  align-self: flex-end;
+  background-color: rgb(2, 93, 76);
+  color: white;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  width: 70%;
+  word-wrap: break-word;
+}
+
+.chat_input {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #D9D9D9;
+  padding: 10px;
+  border: none;
+}
+
+.chat_btn {
+  padding: 10px;
+  background-color: #91F1AC;
+  border-radius: 8px;
+  border: 1px solid #51EE90;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  font-style: normal;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 870px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100vw;
+    padding: 20px;
+    height: auto;
+  }
+
+  .img_container {
+    width: 100%;
+  }
+
+  .chat_container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .chat {
+    width: 90%;
+  }
+}

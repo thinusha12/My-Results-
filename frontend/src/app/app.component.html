@@ -1,0 +1,68 @@
+<!-- header -->
+<div class="app_header" role="banner">
+  <div class="logo_wrapper">
+    <img class="app_logo" alt="Logo" src="../assets/logo.jpg" (click)="navigateDashboard()" />
+    <span class="app_title">Welcome to My Results!</span>
+  </div>
+  <div class="app_header_right">
+    <div class="sub_icons_bar">
+      <div class="sub_icons_item">
+        <a href="https://www.learnenglish.de/" target="_blank">
+          <img class="sub_icons" alt="english" src="../assets/english.jpg" />
+        </a>
+        <span>English</span>
+      </div>
+      <div class="sub_icons_item">
+        <a href="https://www.w3schools.com/" target="_blank">
+          <img class="sub_icons" alt="ict" src="../assets/ict.jpg" />
+        </a>
+        <span>ICT</span>
+      </div>
+      <div class="sub_icons_item">
+        <a href="https://www.khanacademy.org/" target="_blank">
+          <img class="sub_icons" alt="maths" src="../assets/maths.jpg" />
+        </a>
+        <span>Mathematics</span>
+      </div>
+      <div class="sub_icons_item">
+        <a href="https://alison.com/tag/history" target="_blank">
+          <img class="sub_icons" alt="history" src="../assets/history.jpg" />
+        </a>
+        <span>History</span>
+      </div>
+      <div class="sub_icons_item">
+        <a href="https://pll.harvard.edu/subject/science" target="_blank">
+          <img class="sub_icons" alt="science" src="../assets/science.jpg" />
+        </a>
+        <span>Science</span>
+      </div>
+    </div>
+    <div class="admin_login" (click)="navigateAdminLogin()">
+      <img src="../assets/admin.jpg" alt="admin_login" class="sub_icons">
+      <span>Admin</span>
+    </div>
+  </div>
+</div>
+<!-- app-components -->
+<router-outlet></router-outlet>
+<!-- footer -->
+<div class="app_footer">
+  <div class="footer_links">
+    <a href="https://www.facebook.com/thinusha.karunarathna" target="_blank">
+      <img class="link_img" alt="facebook" src="../assets/facebook.svg" />
+    </a>
+    <span>Thinusha Karunarathna</span>
+  </div>
+  <div class="footer_links">
+    <a href="https://www.linkedin.com/in/thinusha-karunarathna-15a790228/" target="_blank">
+      <img class="link_img" alt="linkedin" src="../assets/linkedin.svg" />
+    </a>
+    <span>Thinusha Karunarathna</span>
+  </div>
+  <div class="footer_links">
+    <a href="https://www.google.com/gmail/about/" target="_blank">
+      <img class="link_img" alt="email" src="../assets/gmail.svg" />
+    </a>
+    <span>thsgamming@gmail.com</span>
+  </div>
+</div>

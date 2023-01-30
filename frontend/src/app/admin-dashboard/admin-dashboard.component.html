@@ -1,0 +1,124 @@
+<div class="container">
+  <div class="form_container">
+    <div class="form">
+      <div class="form_title">Enter Student Marks</div>
+      <div class="input_wrapper">
+        <div class="input_field">
+          <label for="studentId" class="input_label">
+            Student ID
+          </label>
+          <input class="input_box" type="text" name="studentId" id="studentId" placeholder="Enter Student ID.."
+            [(ngModel)]="studentId" />
+        </div>
+        <div class="input_field">
+          <label for="name" class="input_label">
+            Name
+          </label>
+          <input class="input_box" type="text" name="name" id="name" placeholder="Enter Student Name.."
+            [(ngModel)]="name" />
+        </div>
+        <div class="input_field">
+          <label for="english" class="input_label">
+            English
+          </label>
+          <input class="input_box" type="number" name="english" id="english" placeholder="Enter English Marks.."
+            [(ngModel)]="english" min="0" />
+        </div>
+        <div class="input_field">
+          <label for="history" class="input_label">
+            History
+          </label>
+          <input class="input_box" type="number" name="history" id="history" placeholder="Enter History Marks.."
+            [(ngModel)]="history" min="0" />
+        </div>
+        <div class="input_field">
+          <label for="maths" class="input_label">
+            Mathematics
+          </label>
+          <input class="input_box" type="number" name="maths" id="maths" placeholder="Enter Mathematics Marks.."
+            [(ngModel)]="maths" min="0" />
+        </div>
+        <div class="input_field">
+          <label for="ict" class="input_label">
+            ICT
+          </label>
+          <input class="input_box" type="number" name="ict" id="ict" placeholder="Enter ICT Marks.." [(ngModel)]="ict"
+            min="0" />
+        </div>
+        <div class="input_field">
+          <label for="science" class="input_label">
+            Science
+          </label>
+          <input class="input_box" type="number" name="science" id="science" placeholder="Enter Science Marks.."
+            [(ngModel)]="science" min="0" />
+        </div>
+        <div class="input_field">
+          <label for="grade" class="input_label">
+            Grade
+          </label>
+          <input class="input_box" type="text" name="grade" id="grade" placeholder="Enter Grade.."
+            [(ngModel)]="grade" />
+        </div>
+      </div>
+      <div class="button_wrapper">
+        <button class="button" *ngIf="isCreate" (click)="createMark()">
+          Submit
+        </button>
+        <button class="button" *ngIf="!isCreate" (click)="updateMark()">
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="table_container">
+    <div class="search_bar">
+      <input class="input_box" type="text" placeholder="Enter Grade.." [(ngModel)]="searchGrade" />
+      <select name="status" id="status" [(ngModel)]="searchStatus" class="select_field">
+        <option value="">All</option>
+        <option value="Pass">Pass</option>
+        <option value="Fail">Fail</option>
+      </select>
+      <button class="button" (click)="getAllMarks()">
+        Search
+      </button>
+    </div>
+    <div class="table_wrapper">
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Grade</th>
+              <th>English</th>
+              <th>ICT</th>
+              <th>Mathematics</th>
+              <th>Science</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of allMarks; index as i">
+              <td>{{s.studentId}}</td>
+              <td>{{s.name}}</td>
+              <td>{{s.grade}}</td>
+              <td>{{s.english}}</td>
+              <td>{{s.ict}}</td>
+              <td>{{s.maths}}</td>
+              <td>{{s.science}}</td>
+              <td>{{s.isPass ? 'Pass' : 'Fail'}}</td>
+              <td class="imgs">
+                <img src="../../assets/edit.png" width="20px" alt="edit" (click)="updateMarksOnFields(i)">
+                <img src="../../assets/remove.png" width="20px" alt="delete" (click)="deleteMark(s._id)">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="msgIcon">
+  <img src="../../assets/messageIcon.png" alt="messageIcon" (click)="navigateChat()">
+</div>
